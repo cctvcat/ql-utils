@@ -1,11 +1,11 @@
 {
   "name": "ql-utils",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "一些开发青龙脚本的工具函数",
   "exports": {
     ".": {
       "types": "./dist/types/index.d.ts",
-      "require": "./dist/index.js",
+      "require": "./dist/index.cjs",
       "import": "./dist/index.mjs"
     }
   },
@@ -16,7 +16,7 @@
     "ql-tools",
     "ql-tool"
   ],
-  "main": "./dist/index.js",
+  "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "type": "module",
   "types": "./dist/types/index.d.ts",

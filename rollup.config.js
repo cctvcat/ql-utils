@@ -38,7 +38,7 @@ const baseConfig = {
 
 const outputType = [
   {
-    file: './dist/index.js',
+    file: './dist/index.cjs',
     name: 'index',
     format: 'cjs',
   },
