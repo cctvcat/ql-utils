@@ -51,7 +51,7 @@ export class Ql {
   }
 
   setToken(token: string) {
-    this.request.defaults.headers.Authorization = `Bearer ${token}`
+    this.request.defaults.headers.Authorization = token.startsWith('Bearer ') ? token : `Bearer ${token}`
   }
 
   async getToken(): Promise<string> {
@@ -125,7 +125,7 @@ export class Ql {
     try {
       const res = await this.get('/api/user', {
         headers: {
-          Authorization: `Bearer ${token}`,
+          Authorization: token.startsWith('Bearer ') ? token : `Bearer ${token}`,
         },
       })
       return res.status === 200
