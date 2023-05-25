@@ -1,6 +1,6 @@
 {
   "name": "ql-utils",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "一些开发青龙脚本的工具函数",
   "exports": {
     ".": {

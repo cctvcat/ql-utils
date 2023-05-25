@@ -14,20 +14,28 @@ function parseString(content: any) {
 }
 
 export class Logger {
-  static log(content: any) {
-    console.log(parseString(content) + '\n')
+  static records: string[] = []
+
+  static dump() {
+    return this.records.join('\n')
   }
 
-  static success(content: any) {
-    console.log(`✅ ${parseString(content)}`)
+  static log(content: any, record = true) {
+    const s = parseString(content)
+    console.log(s)
+    record && this.records.push(s)
   }
 
-  static warn(content: any) {
-    console.log(`⚠︎ ${parseString(content)}`)
+  static success(content: any, record = true) {
+    this.log(`✅ ${parseString(content)}`, record)
   }
 
-  static error(content: any) {
-    console.log(`❌ ${parseString(content)}`)
+  static warn(content: any, record = true) {
+    this.log(`⚠︎ ${parseString(content)}`, record)
+  }
+
+  static error(content: any, record = true) {
+    this.log(`❌ ${parseString(content)}`, record)
   }
 }
 
