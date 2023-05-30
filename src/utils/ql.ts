@@ -14,9 +14,9 @@ export class Ql {
     },
   })
 
-  static async build() {
+  static async build(token?: string) {
     const instance = new Ql(BUILD_FLAG)
-    instance.setToken(await instance.getToken())
+    instance.setToken(token || (await instance.getToken()))
     return instance
   }
 
